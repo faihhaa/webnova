@@ -89,7 +89,7 @@ List the key features of your project:
 
 #### Screenshots (Add at least 3)
 
-![Screenshot](SCREEN.PNG)
+![Screenshot](SCREEN.png)
 *Add caption explaining what this shows*
 
 ![Screenshot2](SCREEN2.PNG)
