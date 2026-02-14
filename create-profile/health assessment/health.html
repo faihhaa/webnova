@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Infertility Detailed Assessment</title>
+    <link rel="stylesheet" href="health.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Infertility Detailed Assessment 🏥</h1>
+
+    <form id="assessmentForm">
+
+        <!-- MALE SECTION -->
+        <div class="card male">
+            <h2>👨 Male Health Details</h2>
+
+            <label>Do you smoke?</label>
+            <select id="maleSmoke" required>
+                <option value="">Select</option>
+                <option>Yes</option>
+                <option>No</option>
+            </select>
+
+            <label>Alcohol consumption?</label>
+            <select id="maleAlcohol" required>
+                <option value="">Select</option>
+                <option>Regular</option>
+                <option>Occasional</option>
+                <option>None</option>
+            </select>
+
+            <label>Semen Analysis Result</label>
+            <select id="semenResult" required>
+                <option value="">Select</option>
+                <option>Normal</option>
+                <option>Low Sperm Count</option>
+                <option>Low Motility</option>
+                <option>Abnormal Morphology</option>
+                <option>Not Done</option>
+            </select>
+
+            <label>Medical Conditions (Select if applicable)</label>
+            <label><input type="checkbox" id="maleDiabetes"> Diabetes</label>
+            <label><input type="checkbox" id="maleHypertension"> Hypertension</label>
+            <label><input type="checkbox" id="maleHormonal"> Hormonal Issues</label>
+            <label><input type="checkbox" id="maleVaricocele"> Varicocele</label>
+            <label><input type="checkbox" id="maleOther"> Other</label>
+
+            <label>If Other, please specify</label>
+            <textarea id="maleOtherText" placeholder="Describe other male health conditions..."></textarea>
+
+        </div>
+
+        <!-- FEMALE SECTION -->
+        <div class="card female">
+            <h2>👩 Female Health Details</h2>
+
+            <label>Are your periods regular?</label>
+            <select id="femalePeriods" required>
+                <option value="">Select</option>
+                <option>Regular</option>
+                <option>Irregular</option>
+            </select>
+
+            <label>Have you been diagnosed with PCOD/PCOS?</label>
+            <select id="femalePCOD" required>
+                <option value="">Select</option>
+                <option>Yes</option>
+                <option>No</option>
+                <option>Under Investigation</option>
+            </select>
+
+            <label>Other Female Conditions</label>
+            <label><input type="checkbox" id="femaleEndometriosis"> Endometriosis</label>
+            <label><input type="checkbox" id="femaleThyroid"> Thyroid Disorder</label>
+            <label><input type="checkbox" id="femaleTubal"> Tubal Block</label>
+            <label><input type="checkbox" id="femaleMiscarriage"> Previous Miscarriage</label>
+            <label><input type="checkbox" id="femaleFibroids"> Fibroids</label>
+            <label><input type="checkbox" id="femaleOther"> Other</label>
+
+            <label>If Other, please specify</label>
+            <textarea id="femaleOtherText" placeholder="Describe other female health conditions..."></textarea>
+
+        </div>
+
+        <!-- COUPLE SECTION -->
+        <div class="card common">
+            <h2>💍 Couple Information</h2>
+
+            <label>How long trying to conceive?</label>
+            <select id="conceiveDuration" required>
+                <option value="">Select</option>
+                <option>Less than 1 year</option>
+                <option>1 - 2 years</option>
+                <option>More than 2 years</option>
+            </select>
+
+            <label>Previous Fertility Treatment?</label>
+            <select id="previousTreatment">
+                <option value="">Select</option>
+                <option>None</option>
+                <option>Ovulation Induction</option>
+                <option>IUI</option>
+                <option>IVF</option>
+            </select>
+
+            <label>Additional Notes</label>
+            <textarea id="additionalNotes" placeholder="Any additional concerns or medical history..."></textarea>
+
+        </div>
+
+        <button type="submit">Submit Assessment</button>
+
+    </form>
+
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('assessmentForm');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Male data
+        const maleData = {
+            smoke: document.getElementById('maleSmoke').value,
+            alcohol: document.getElementById('maleAlcohol').value,
+            semenResult: document.getElementById('semenResult').value,
+            conditions: {
+                diabetes: document.getElementById('maleDiabetes').checked,
+                hypertension: document.getElementById('maleHypertension').checked,
+                hormonal: document.getElementById('maleHormonal').checked,
+                varicocele: document.getElementById('maleVaricocele').checked,
+                other: document.getElementById('maleOther').checked,
+                otherText: document.getElementById('maleOtherText').value.trim()
+            }
+        };
+
+        // Female data
+        const femaleData = {
+            periods: document.getElementById('femalePeriods').value,
+            pcod: document.getElementById('femalePCOD').value,
+            conditions: {
+                endometriosis: document.getElementById('femaleEndometriosis').checked,
+                thyroid: document.getElementById('femaleThyroid').checked,
+                tubal: document.getElementById('femaleTubal').checked,
+                miscarriage: document.getElementById('femaleMiscarriage').checked,
+                fibroids: document.getElementById('femaleFibroids').checked,
+                other: document.getElementById('femaleOther').checked,
+                otherText: document.getElementById('femaleOtherText').value.trim()
+            }
+        };
+
+        // Couple info
+        const coupleInfo = {
+            conceiveDuration: document.getElementById('conceiveDuration').value,
+            previousTreatment: document.getElementById('previousTreatment').value,
+            additionalNotes: document.getElementById('additionalNotes').value.trim()
+        };
+
+        // Validate required fields
+        if (!maleData.smoke || !maleData.alcohol || !maleData.semenResult ||
+            !femaleData.periods || !femaleData.pcod || !coupleInfo.conceiveDuration) {
+            alert("Please fill all required fields.");
+            return;
+        }
+
+        // Store in localStorage
+        const assessmentData = { male: maleData, female: femaleData, couple: coupleInfo };
+        localStorage.setItem('assessmentData', JSON.stringify(assessmentData));
+
+        // Navigate to profile.html
+        window.location.href = './selection/selection.html'; // adjust path if needed
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Couple Registration</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+<div class="main-container">
+
+    <h1>Couple Registration ❤️</h1>
+
+    <form id="form">
+
+        <!-- Male Card -->
+        <div class="card male">
+            <h2>👨 Male Details</h2>
+            <input type="text" id="maleName" placeholder="Full Name" required>
+            <div class="two-column">
+                <input type="number" id="maleAge" placeholder="Age" required>
+                <input type="number" id="maleHeight" placeholder="Height (cm)" required>
+            </div>
+            <div class="two-column">
+                <input type="number" id="maleWeight" placeholder="Weight (kg)" required>
+                <input type="text" id="maleOccupation" placeholder="Occupation" required>
+            </div>
+            <input type="email" id="maleEmail" placeholder="Email" required>
+        </div>
+
+        <!-- Female Card -->
+        <div class="card female">
+            <h2>👩 Female Details</h2>
+            <input type="text" id="femaleName" placeholder="Full Name" required>
+            <div class="two-column">
+                <input type="number" id="femaleAge" placeholder="Age" required>
+                <input type="number" id="femaleHeight" placeholder="Height (cm)" required>
+            </div>
+            <div class="two-column">
+                <input type="number" id="femaleWeight" placeholder="Weight (kg)" required>
+                <input type="text" id="femaleOccupation" placeholder="Occupation" required>
+            </div>
+            <input type="email" id="femaleEmail" placeholder="Email" required>
+        </div>
+
+        <!-- Relationship Section -->
+        <div class="card relationship">
+            <h2>💍 Relationship Details</h2>
+            <div class="two-column">
+                <input type="number" id="marriageYear" placeholder="Year of Marriage" required>
+                <div class="radio-section">
+                    <label>How long trying to conceive?</label>
+                    <div class="radio-options">
+                        <label><input type="radio" name="conceive" value="less1" required> Less than 1 year</label>
+                        <label><input type="radio" name="conceive" value="1to2"> 1 - 2 years</label>
+                        <label><input type="radio" name="conceive" value="more2"> More than 2 years</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Remove onclick and let JS handle submit -->
+        <button type="submit">Submit Registration</button>
+
+    </form>
+
+</div>
+
+<script>
+const form = document.getElementById('form');
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault(); // stop default submit
+
+    // Get values
+    const maleData = {
+        name: document.getElementById('maleName').value.trim(),
+        age: document.getElementById('maleAge').value.trim(),
+        height: document.getElementById('maleHeight').value.trim(),
+        weight: document.getElementById('maleWeight').value.trim(),
+        occupation: document.getElementById('maleOccupation').value.trim(),
+        email: document.getElementById('maleEmail').value.trim()
+    };
+
+    const femaleData = {
+        name: document.getElementById('femaleName').value.trim(),
+        age: document.getElementById('femaleAge').value.trim(),
+        height: document.getElementById('femaleHeight').value.trim(),
+        weight: document.getElementById('femaleWeight').value.trim(),
+        occupation: document.getElementById('femaleOccupation').value.trim(),
+        email: document.getElementById('femaleEmail').value.trim()
+    };
+
+    const marriageYear = document.getElementById('marriageYear').value.trim();
+    const conceive = document.querySelector('input[name="conceive"]:checked');
+
+    // Validate all fields
+    if (!maleData.name || !maleData.age || !maleData.height || !maleData.weight || !maleData.occupation || !maleData.email ||
+        !femaleData.name || !femaleData.age || !femaleData.height || !femaleData.weight || !femaleData.occupation || !femaleData.email ||
+        !marriageYear || !conceive) {
+        alert("Please fill all fields.");
+        return;
+    }
+
+    // Store in localStorage
+    const coupleData = { male: maleData, female: femaleData, marriageYear, conceive: conceive.value };
+    localStorage.setItem('coupleData', JSON.stringify(coupleData));
+
+    // Navigate to next page
+    window.location.href = './health assessment/health.html';
+});
+</script>
+
+</body>
+</html>
