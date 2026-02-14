@@ -92,10 +92,10 @@ List the key features of your project:
 ![Screenshot](SCREEN.png)
 *Add caption explaining what this shows*
 
-![Screenshot2](SCREEN2.PNG)
+![Screenshot2](SCREEN 2.png)
 *Add caption explaining what this shows*
 
-![Screenshot3](SCREEN3.PNG)
+![Screenshot3](SCREEN 3.png)
 *Add caption explaining what this shows*
 
 #### Diagrams
