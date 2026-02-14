@@ -2,27 +2,33 @@
   <img src="./img.png" alt="Project Banner" width="100%">
 </p>
 
-# [Project Name] 🎯
+# [BLOOM PATH] 🎯
 
 ## Basic Details
 
-### Team Name: [Name]
+### Team Name: [WEB NOVA]
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
+- Member 1: [FATHIMA RANNA K] - [EMEA ARTS AND SCIENCE COLLEGE]
+- Member 2: [FATHIMA FAIHA KK] - [EMEA ATS AND SCIENCE COLLEGE]
 
 ### Hosted Project Link
-[mention your project hosted link here]
+INFERTILE THAT THE PROBLEM IN OUR SOCIETY WE CAN SEE THAT MORE COUPLES FACES THIS INFERTILITY
 
 ### Project Description
-[2-3 lines about what your project does]
+INFERTILE IS A GROWING HEALTH CONCERN AFFECTING MANY COUPLES DUE TO LIFESTYLE CHANGES,HORMONAL IMBALANCE,STRESS,PCOD,MEDICAL CONDITION,AND ENVIRONMENTAL FACTORS
 
 ### The Problem statement
-[What problem are you solving?]
-
-### The Solution
-[How are you solving it?]
+PROVIDING MULTI-SPECIALITY DOCTORS
+STRUCTURED HEALTH ASSESSMENT
+PERSONALISED LIFESTYLE GUIDANCE
+AWARENESS AND EDUCATIONAL RESOURCES
+PROGRESS TRACKING SYSTEM
+Solution
+1.MULTI-SPECIALITY DOCTORS ACCESS
+2.ONLINE CONSULTATION
+3-HEALTH ASSESSMENT AND TRACKING
+4-LIFE STYLE AND WELLNESS SUPPORT
 
 ---
 
@@ -31,10 +37,10 @@
 ### Technologies/Components Used
 
 **For Software:**
-- Languages used: [e.g., JavaScript, Python, Java]
-- Frameworks used: [e.g., React, Django, Spring Boot]
-- Libraries used: [e.g., axios, pandas, JUnit]
-- Tools used: [e.g., VS Code, Git, Docker]
+- Languages used: HTML,CSS,JAVASCRIPT
+- Frameworks used: FRONTEND FRAME WORK,BACKEND FRAME WORK,CSS FRAME
+- Libraries used:AXIOS,REACT ROUTER,FORMIK,CHART.JS
+- Tools used: HTML,CSS,JAVASCRIPT
 
 **For Hardware:**
 - Main components: [List main components]
@@ -46,10 +52,10 @@
 ## Features
 
 List the key features of your project:
-- Feature 1: [Description]
-- Feature 2: [Description]
-- Feature 3: [Description]
-- Feature 4: [Description]
+- Feature 1: MULTI SPECIAL DOCTOR ACCESS
+- Feature 2: USER REGISTRATION AND SECURED SIGNUP
+- Feature 3: HEALTHY ASSESSMENT MODULE
+- Feature 4: APPOINMENT MANAGEMENT SYSTEM
 
 ---
 
@@ -83,13 +89,13 @@ List the key features of your project:
 
 #### Screenshots (Add at least 3)
 
-![Screenshot1](Add screenshot 1 here with proper name)
+![Screenshot](SCREEN.PNG)
 *Add caption explaining what this shows*
 
-![Screenshot2](Add screenshot 2 here with proper name)
+![Screenshot2](SCREEN2.PNG)
 *Add caption explaining what this shows*
 
-![Screenshot3](Add screenshot 3 here with proper name)
+![Screenshot3](SCREEN3.PNG)
 *Add caption explaining what this shows*
 
 #### Diagrams
